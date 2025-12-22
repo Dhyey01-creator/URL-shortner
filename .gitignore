@@ -1,0 +1,17 @@
+node_modules/
+.env
+.DS_Store
+views/__pycache__/
+__pycache__/
+*.log
+npm-debug.log*
+coverage/
+dist/
+build/
+.vscode/
+.idea/
+.cache/
+.next/
+out/
+.env.local
+
