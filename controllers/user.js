@@ -21,10 +21,16 @@ async function handleUserLogin(req, res) {
       error: "Invalid Username or Password",
     });
 
+  if(user.role === "ADMIN"){
+    const token = setUser(user);
+    res.cookie("token", token);
+    return res.redirect("/admin/urls");
+  }
+
   const token = setUser(user);
-  // res.cookie("uid", token);
-  // return res.redirect("/");
-  return res.json({ token });
+  res.cookie("token", token);
+  return res.redirect("/");
+  // return res.json({ token });
 }
 
 module.exports = {
